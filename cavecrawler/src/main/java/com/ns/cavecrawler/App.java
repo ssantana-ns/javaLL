@@ -41,7 +41,7 @@ public class App
        
         The rules of exploring are simple, the program finds the number of paths
         from "start" to "end" for the given system. Each cave (labeled with a letter)
-        can only be visted once. For the sample cave system we expect X paths but we are not
+        can only be visted once. For the sample cave system we expect 6 paths but we are not
         getting that number back!
         */
         CaveSystem caveSystem = App.generateCaveSystem();
