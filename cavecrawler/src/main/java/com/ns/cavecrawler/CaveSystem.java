@@ -24,8 +24,8 @@ public class CaveSystem {
             return;
         }
 
-        for (Cave connected_cave: cave.connectedCaves()) {
-            this.findPaths(connected_cave, newPath);
+        for (Cave connectedCave: cave.adjacentCaves()) {
+            this.findPaths(connectedCave, newPath);
         }
     }
 

@@ -1,24 +1,24 @@
 package com.ns.cavecrawler;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Cave {
    
-    private HashMap<String, Cave> connected_caves;
+    private HashMap<String, Cave> connectedCaves;
     public String value;
     public Boolean isStart;
     public Boolean isEnd;
 
     public Cave(String value) {
-        this.connected_caves = new HashMap<String, Cave>();
+        this.connectedCaves = new HashMap<String, Cave>();
         this.value = value;
         this.isStart = value == "start";
         this.isEnd = value == "end";
     }
 
     protected void addCave(Cave cave) {
-        this.connected_caves.put(cave.value, cave);
+        this.connectedCaves.put(cave.value, cave);
     }
 
     public void connect(Cave cave) {
@@ -27,14 +27,14 @@ public class Cave {
     }
 
     public Boolean isConnected(Cave cave) {
-        if (this.connected_caves.get(cave.value) != null) {
+        if (this.connectedCaves.get(cave.value) != null) {
             return true;
         }
         return false;
     }
 
-    public Collection<Cave> connectedCaves() {
-        return this.connected_caves.values();
+    public ArrayList<Cave> adjacentCaves() {
+        return new ArrayList<Cave>(this.connectedCaves.values());
     }
 
 }

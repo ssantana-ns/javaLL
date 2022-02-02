@@ -25,6 +25,7 @@ public class Path {
     public Path addCave(Cave cave) {
         Path newPath = new Path(this);
         newPath.cavePath.add(cave);
+        newPath.caveValues.add(cave.value);
         return newPath;
     }
 
